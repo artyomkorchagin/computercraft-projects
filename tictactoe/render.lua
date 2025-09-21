@@ -32,10 +32,10 @@ end
 
 function screen:draw_border()
     self.monitor.setBackgroundColor(self.color.background)
-    self:draw_horizontal_line(self.height/3)
-    self:draw_horizontal_line(self.height/3*2)
-    self:draw_vertical_line(self.width/3)
-    self:draw_vertical_line(self.width/3*2)
+    self:draw_horizontal_line(math.floor(self.height/3))
+    self:draw_horizontal_line(math.floor(self.height/3*2))
+    self:draw_vertical_line(math.floor(self.width/3))
+    self:draw_vertical_line(math.floor(self.width/3*2))
 end
 
 function screen:draw_vertical_line(x)
