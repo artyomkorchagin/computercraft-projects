@@ -1,0 +1,14 @@
+{
+    "Lua.diagnostics.globals": [
+        "peripheral",
+        "rednet",
+        "sleep",
+        "parallel",
+        "redstone",
+        "term",
+        "colors"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field"
+    ]
+}
