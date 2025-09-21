@@ -31,6 +31,7 @@ function screen:new()
 end
 
 function screen:draw_border()
+    self.monitor.setBackgroundColor(self.color.background)
     self:draw_horizontal_line(self.height/3)
     self:draw_horizontal_line(self.height/3*2)
     self:draw_vertical_line(self.width/3)
@@ -40,7 +41,7 @@ end
 function screen:draw_vertical_line(x)
     for y = 1, self.height do
         self.monitor.setCursorPos(x, y)
-        self.monitor.setTextColor(self.bounds_color)
+        self.monitor.setTextColor(self.color.bounds)
         self.monitor.write("◘")
     end
 end
@@ -48,7 +49,7 @@ end
 function screen:draw_horizontal_line(y)
     for x = 1, self.width do
         self.monitor.setCursorPos(x, y)
-        self.monitor.setTextColor(self.bounds_color)
+        self.monitor.setTextColor(self.color.bounds)
         self.monitor.write("◘")
     end
 end
