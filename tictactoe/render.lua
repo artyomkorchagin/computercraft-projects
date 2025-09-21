@@ -22,16 +22,19 @@ function screen:new()
             o = colors.blue
         }
     }
-    if self.monitor then
-        self.width, self.height = self.monitor.getSize()
-    end
-
     setmetatable(instance, {__index = self})
     return instance
 end
 
+function screen:init()
+    if self.monitor then
+        self.width, self.height = self.monitor.getSize()
+    end
+end
+
 function screen:draw_border()
     self.monitor.setBackgroundColor(self.color.background)
+    self.monitor.clear()
     self:draw_horizontal_line(math.floor(self.height/3))
     self:draw_horizontal_line(math.floor(self.height/3*2))
     self:draw_vertical_line(math.floor(self.width/3))
@@ -54,4 +57,5 @@ function screen:draw_horizontal_line(y)
     end
 end
 local myScreen = screen:new()
+myScreen:init()
 myScreen:draw_border()
