@@ -1,6 +1,6 @@
 -- ===== CONFIG =====
 local MONITOR_SIDE = "right"
-
+local BORDER_SYMBOL = "◘"
 -- ===== GLOBAL STATE =====
 local monitor = peripheral.wrap(MONITOR_SIDE)
 if not monitor then
@@ -45,7 +45,7 @@ function screen:draw_vertical_line(x)
     for y = 1, self.height do
         self.monitor.setCursorPos(x, y)
         self.monitor.setTextColor(self.color.bounds)
-        self.monitor.write("◘")
+        self.monitor.write(BORDER_SYMBOL)
     end
 end
 
@@ -53,7 +53,7 @@ function screen:draw_horizontal_line(y)
     for x = 1, self.width do
         self.monitor.setCursorPos(x, y)
         self.monitor.setTextColor(self.color.bounds)
-        self.monitor.write("◘")
+        self.monitor.write(BORDER_SYMBOL)
     end
 end
 local myScreen = screen:new()
